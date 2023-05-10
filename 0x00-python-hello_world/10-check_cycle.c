@@ -11,14 +11,16 @@ int check_cycle(listint_t *list)
 {
 	if (list == NULL)
 		return (0);
-	while (list < list->next)
+	while (list > list->next && list->next)
 	{
 		/* The address of the head gradually increases */
 		list = list->next;
 	}
 	/* if the address is smaller then we are back in the cycle */
 	if (list->next)
+	{
 		return (1);
+	}
 	else
 		return (0);
 }
