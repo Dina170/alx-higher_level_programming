@@ -10,7 +10,7 @@ if __name__ == "__main__":
         if operator == '+':
             print("{:d} + {:d} = {:d}".format(a, b, add(a, b)))
             exit(0)
-        elif operator == '-'
+        elif operator == '-':
             print("{:d} - {:d} = {:d}".format(a, b, sub(a, b)))
             exit(0)
         elif operator == '*':
