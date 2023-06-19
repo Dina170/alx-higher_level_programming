@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-"""
-A module that test differents behaviors
+"""A module that test differents behaviors
 of the Square class
 """
 import unittest
