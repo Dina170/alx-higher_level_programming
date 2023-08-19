@@ -8,13 +8,11 @@ But, this time the script is safe from MySQL injections!
 import MySQLdb
 from sys import argv
 
-
 if __name__ == '__main__':
     """
     connect to the database and filter
     results from the database.
     """
-
     username = argv[1]
     password = argv[2]
     database = argv[3]
@@ -22,7 +20,7 @@ if __name__ == '__main__':
 
     db = MySQLdb.connect(host="localhost", user=username, port=3306, passwd=password, db=database)
     cursor = db.cursor()
-    query = "SELECT * FROM states WHERE BINARY name = '%s' ORDER BY states.id"
+    query = "SELECT * FROM states WHERE BINARY name = %s ORDER BY states.id"
     cursor.execute(query, (name,))
     rows = cur.fetchall()
 
