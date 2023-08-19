@@ -6,7 +6,6 @@ the letter `N` from the database `hbtn_0e_0_usa`.
 import MySQLdb
 from sys import argv
 
-
 if __name__ == '__main__':
     """
     connect to the database and filter
@@ -17,7 +16,7 @@ if __name__ == '__main__':
 
     cur = db.cursor()
     cur.execute("SELECT * FROM states \
-                 WHERE name LIKE 'N%' \
+                 WHERE name LIKE BINARY 'N%' \
                  ORDER BY states.id")
     rows = cur.fetchall()
 
