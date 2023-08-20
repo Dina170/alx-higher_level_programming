@@ -2,7 +2,6 @@
 """
 Takes in an argument and displays all values in the states
 where `name` matches the argument from the database `hbtn_0e_0_usa`.
-
 But, this time the script is safe from MySQL injections!
 """
 import MySQLdb
