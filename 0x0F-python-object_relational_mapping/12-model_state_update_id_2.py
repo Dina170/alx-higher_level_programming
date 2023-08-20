@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """
-Adds the State object
-`Louisiana` to the database `hbtn_0e_6_usa`.
+Changes the name of a State object from the database `hbtn_0e_6_usa`.
 """
 
 from sys import argv
@@ -15,7 +14,6 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    state = State(name='Louisiana')
-    session.add(state)
+    state = session.query(State).filter(State.id == '2').first()
+    state.name = 'New Mexico'
     session.commit()
-    print(state.id)
