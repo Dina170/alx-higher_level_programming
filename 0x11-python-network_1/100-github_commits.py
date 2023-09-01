@@ -7,9 +7,10 @@ from sys import argv
 import requests
 
 
-if __name__ == "__main__":
-    r = requests.get("https://api.github.com/repos/{}/{}/commits".format(
-        argv[2], argv[1])).json()
-    for i in range(10):
-        print("{}: {}".format(r[i].get("sha"),
-                              r[i].get("commit").get("author").get("name")))
+if __name__ == '__main__':
+    url = "https://api.github.com/repos/{}/{}/commits".format(argv[2], argv[1])
+    r = requests.get(url)
+    commits = r.json()
+    for commit in commits[:10]:
+        print(commit.get('sha'), end=': ')
+        print(commit.get('commit').get('author').get('name'))
